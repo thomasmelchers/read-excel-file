@@ -7,7 +7,8 @@ This is a learning project where I process an excel file from a directory. The f
 ## To install
 
 ### Create a PostgreSQL database
-`CREATE TABLE sales (
+```
+   CREATE TABLE sales (
     id SERIAL PRIMARY KEY,
     tea_name VARCHAR(100),
     tea_origin VARCHAR(100),
@@ -15,7 +16,9 @@ This is a learning project where I process an excel file from a directory. The f
     quantity NUMERIC,
     price NUMERIC,
     total NUMERIC
-);`
+);
+
+```
 
 ### application.properties file
 Need to create an `application.properties` file in `src/main/resources` folder
