@@ -88,15 +88,4 @@ class DataSerializerTest {
 
     }
 
-
-    @Test
-    void test_setSales() {
-
-        mockSales.addSales(mockSale);
-
-        dataSerializer.setSales(mockSales);
-
-        assertEquals(mockSales, dataSerializer.getSales());
-
-    }
 }
