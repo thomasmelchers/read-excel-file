@@ -34,12 +34,14 @@ You need to create a relational database such as PostgreSQL. Here is the structu
 Need to create an `application.properties` file in `src/main/resources` folder
 In this file, you need to add these properties and fill the blank. 
 
+```
   directory.incoming=
   directory.processing=
   directory.completed=
   postgres.database=
   postgres.username=
   postgres.password=
+```
 
 ## Run the project
 
