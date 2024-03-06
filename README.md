@@ -6,6 +6,8 @@ This is a learning project where I process an excel file from a directory. The f
 
 ## To install
 
+To be able to run the project, you need to have java and maven installed on your machine. 
+
 First step, need to clone this repo on your machine.
 You need to verify there are tree folders named `incoming`, `processing` and `completed` under teaShop. If not, you need to create it. 
 
