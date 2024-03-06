@@ -1,25 +1,23 @@
 package com.thomasmelchers.utils;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 
 public class ApplicationProperties {
 
+    private static final java.util.logging.Logger LOGGER = Logger.getLogger(ApplicationProperties.class.getName());
     private static final String PROPERTIES_FILE = "application.properties";
     private static final Properties properties = new Properties();
-
-    private static final Logger logger = LogManager.getLogger(ApplicationProperties.class);
 
     static {
         try (InputStream is = ApplicationProperties.class.getClassLoader().getResourceAsStream(PROPERTIES_FILE)) {
             properties.load(is);
         } catch (IOException e) {
-            logger.error("Failed to load properties file", e);
+            LOGGER.severe("Failed to load properties file");
         }
     }
 

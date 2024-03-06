@@ -1,14 +1,18 @@
 package com.thomasmelchers.processor;
 
 
+
 import com.thomasmelchers.models.Sale;
 import com.thomasmelchers.models.Sales;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 
 public class DataSerializer {
 
+
+    private static final Logger LOGGER = Logger.getLogger(DataSerializer.class.getName());
     private final List<ExcelDataCollector> excelDataCollectorList;
     private Sales sales;
 

@@ -6,9 +6,11 @@ import com.thomasmelchers.utils.MovingFile;
 
 import java.io.File;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class ExcelProcessor {
 
+    private static final Logger LOGGER = Logger.getLogger(ExcelProcessor.class.getName());
     private List<File> excelFiles;
     private ExcelReader excelReader;
 

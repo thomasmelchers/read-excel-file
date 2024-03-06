@@ -7,12 +7,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
 import static org.apache.poi.ss.usermodel.CellType.NUMERIC;
 
 
 public class ExcelReader {
 
+    private static final Logger LOGGER = Logger.getLogger(ExcelReader.class.getName());
     private ExcelFileHeaders excelFileHeaders;
     private DataList dataList;
 
@@ -28,7 +30,7 @@ public class ExcelReader {
         }
 
         try (FileInputStream fis = new FileInputStream(excelFile);
-             Workbook workbook = WorkbookFactory.create(fis);) {
+             Workbook workbook = WorkbookFactory.create(fis)) {
 
             Sheet sheet = workbook.getSheetAt(0);
 
@@ -82,7 +84,7 @@ public class ExcelReader {
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.severe(e.getMessage());
         }
     }
 

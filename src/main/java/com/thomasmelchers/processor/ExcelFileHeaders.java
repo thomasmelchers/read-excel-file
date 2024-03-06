@@ -1,11 +1,16 @@
 package com.thomasmelchers.processor;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class ExcelFileHeaders {
 
-    List<String> excelFileHeaders;
+    private static final Logger LOGGER = Logger.getLogger(ExcelFileHeaders.class.getName());
+
+    private List<String> excelFileHeaders;
 
     public ExcelFileHeaders() {
         this.excelFileHeaders = new ArrayList<>();

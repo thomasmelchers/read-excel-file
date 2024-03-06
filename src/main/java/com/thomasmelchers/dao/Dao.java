@@ -6,13 +6,13 @@ import com.thomasmelchers.processor.FolderWatcher;
 import com.thomasmelchers.utils.ApplicationProperties;
 import com.thomasmelchers.utils.MovingFile;
 import com.thomasmelchers.utils.PostgresConnection;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 
 import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 
 public class Dao {
@@ -20,7 +20,7 @@ public class Dao {
     private String filename;
     private Sales sales;
     private Connection connection;
-    private static final Logger LOGGER = LogManager.getLogger(Dao.class);
+    private static final Logger LOGGER = Logger.getLogger(Dao.class.getName());
 
 
     public Dao(String filename, Sales sales) {
@@ -50,13 +50,13 @@ public class Dao {
             LOGGER.info(String.format("The %d rows have been inserted into the sales table", sales.getSalesList().size()));
             MovingFile.moveFiles(filename, new File(ApplicationProperties.getDirectoryProcessing()), new File(ApplicationProperties.getDirectoryCompleted()));
         } catch (SQLException e) {
-            LOGGER.error(e.getMessage());
+            LOGGER.severe(e.getMessage());
         } finally {
             try {
                 connection.close();
                 LOGGER.info("Connection to postgres database is closed");
             } catch (SQLException e) {
-                LOGGER.error(e.getMessage());
+                LOGGER.severe(e.getMessage());
             }
         }
 

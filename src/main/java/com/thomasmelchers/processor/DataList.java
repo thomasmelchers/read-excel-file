@@ -1,11 +1,15 @@
 package com.thomasmelchers.processor;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class DataList {
 
-    List<ExcelDataCollector> excelDataCollectorList;
+    private static final Logger LOGGER = Logger.getLogger(DataList.class.getName());
+    private List<ExcelDataCollector> excelDataCollectorList;
 
     public DataList() {
         this.excelDataCollectorList = new ArrayList<>();

@@ -1,18 +1,14 @@
 package com.thomasmelchers.processor;
 
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.logging.Logger;
 
 
 public class FolderWatcher {
 
-    private static final Logger LOGGER = LogManager.getLogger(FolderWatcher.class);
+    private static final java.util.logging.Logger LOGGER = Logger.getLogger(FolderWatcher.class.getName());
     final File directory ;
 
 
@@ -50,7 +46,8 @@ public class FolderWatcher {
             }
         }
 
-       LOGGER.info("total of xls files: {}", xlsFiles.size());
+        int nbFiles = xlsFiles.isEmpty() ? 0 : xlsFiles.size();
+        LOGGER.info("Total of xls files present in incoming's folder: " + nbFiles);
         return xlsFiles;
     }
 

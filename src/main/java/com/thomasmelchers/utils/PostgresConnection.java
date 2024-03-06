@@ -3,12 +3,13 @@ package com.thomasmelchers.utils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import java.util.logging.Logger;
+
+
 
 public class PostgresConnection {
 
-    private static final Logger LOGGER = LogManager.getLogger(PostgresConnection.class);
+    private static final java.util.logging.Logger LOGGER = Logger.getLogger(PostgresConnection.class.getName());
     final String DATABASE ;
     final String USER;
     final String PASSWORD;
@@ -29,11 +30,11 @@ public class PostgresConnection {
             if(connection != null) {
                LOGGER.info("Connected to Postgres database");
             } else {
-                LOGGER.error("Connection to Postgres database failed");
+                LOGGER.severe("Connection to Postgres database failed");
             }
         } catch(SQLException e) {
 
-            LOGGER.error("Error " + e.getMessage());
+            LOGGER.severe("Error " + e.getMessage());
         }
 
         return connection;

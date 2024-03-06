@@ -1,9 +1,14 @@
 package com.thomasmelchers.processor;
 
+
+
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class ExcelDataCollector {
+
+    private static final Logger LOGGER = Logger.getLogger(ExcelDataCollector.class.getName());
 
     private Map<String, String> dataCollector;
 

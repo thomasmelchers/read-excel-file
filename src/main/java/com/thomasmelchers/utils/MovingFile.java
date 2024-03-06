@@ -1,13 +1,11 @@
 package com.thomasmelchers.utils;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.io.File;
+import java.util.logging.Logger;
 
 public class MovingFile {
 
-    private static final Logger LOGGER = LogManager.getLogger(MovingFile.class);
+    private static final java.util.logging.Logger LOGGER = Logger.getLogger(MovingFile.class.getName());
 
     public static void moveFiles(String filename, File fromDirectoryPath, File toDirectoryPath) {
 
@@ -18,12 +16,12 @@ public class MovingFile {
 
             if (result) {
                 fileToMove.delete();
-                LOGGER.info(" {} has moved to new directory {}", filename, toDirectoryPath);
+                LOGGER.info(String.format(" %s has moved to new directory %s", filename, toDirectoryPath));
             } else {
-                LOGGER.error("Not possible to move the file to the new location!");
+                LOGGER.severe("Not possible to move the file to the new location!");
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            LOGGER.severe(e.getMessage());
         }
 
     }
