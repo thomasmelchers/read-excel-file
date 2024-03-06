@@ -48,8 +48,9 @@ Go to the target folder in project directory
 
 Run the jar file which include all the dependencies
 ``` java -jar teaShop-1.0-SNAPSHOT-jar-with-dependencies.jar```
-## Technologies
+## Technologies && librairies
 Java 17,
 Maven,
 Mockito,
-JUnit5
+JUnit5,
+Apache POI
