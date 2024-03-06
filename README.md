@@ -1,7 +1,7 @@
 # READ EXCEL FILE
 
 ## Description
-This is a learning project where I process an excel file from a directory. The file is read and data are imported to a relational database. The Excel file need to be placed in the `incoming` folder and it will move to `processing` and then `completed` folders.
+This is a learning project where I process an excel file from a directory. The file is read and the data are imported to a relational database. The Excel file needs to be placed in the `incoming` folder and it will move to `processing` and then `completed` folders.
 
 
 ## To install
